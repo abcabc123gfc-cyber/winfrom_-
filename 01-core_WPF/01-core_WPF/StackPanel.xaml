@@ -1,0 +1,16 @@
+﻿<Window x:Class="_01_core_WPF.StackPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_01_core_WPF"
+        mc:Ignorable="d"
+        Title="StackPanel" Height="450" Width="800">
+    <StackPanel Orientation="Vertical" >
+        <!--Orientation="Horizontal":水平方向排列,默认垂直方向进行排列-->
+        <Button HorizontalAlignment="Left">Button1</Button>
+        <Button>Button1</Button>
+        <Button>Button1</Button>
+        <Button>Button1</Button>
+    </StackPanel>
+</Window>

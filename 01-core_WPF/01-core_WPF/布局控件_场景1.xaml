@@ -1,0 +1,33 @@
+﻿<Window x:Class="_01_core_WPF.布局控件_场景1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_01_core_WPF"
+        mc:Ignorable="d"
+        Title="布局控件_场景1" Height="450" Width="800">
+    <Grid>
+       <Grid.ColumnDefinitions>
+            <ColumnDefinition >
+
+            </ColumnDefinition>
+            <ColumnDefinition >
+
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition >
+
+            </RowDefinition>
+            <RowDefinition >
+
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <!--横的是水平方向,竖的是垂直方向-->
+        <Button VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" Content="按钮1" />
+        <!--margin: 外边距 左 上 右 下 设置的顺序-->
+        <Button  Grid.Column="0" Grid.Row="0" Content="按钮2" Height="50"  Width="100"  Margin="10 10 10 10" />
+        <TextBlock Background="Gray" Padding="20 10 30 10" Grid.Column="1" Grid.Row="1" Height="40" Text="文本块" />
+    </Grid>
+</Window>

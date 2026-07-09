@@ -1,0 +1,24 @@
+﻿<Window x:Class="_01_core_WPF.布局控件"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_01_core_WPF"
+        mc:Ignorable="d"
+        Title="布局控件" Height="450" Width="800">
+    <UniformGrid Rows="3" Columns="3" FirstColumn="1">
+        <Button Content="bt1" Height="50" Width="100"></Button>
+        <Button Content="bt1"></Button>
+        <Button Content="bt1"></Button>
+        
+        <Button Content="bt1"></Button>
+        <Button Content="bt1"></Button>
+        <Button Content="bt1"></Button>
+        
+        <Button Content="bt1"></Button>
+        <Button Content="bt1"></Button>
+        <Button Content="bt1"></Button>
+        
+        
+    </UniformGrid>
+</Window>

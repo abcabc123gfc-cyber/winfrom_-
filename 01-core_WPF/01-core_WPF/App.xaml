@@ -1,0 +1,13 @@
+﻿<Application x:Class="_01_core_WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:_01_core_WPF"
+             StartupUri="MyCanVas.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="btn-For" TargetType="Button">
+               <Setter Property="Foreground" Value="Blue"/>
+           </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
