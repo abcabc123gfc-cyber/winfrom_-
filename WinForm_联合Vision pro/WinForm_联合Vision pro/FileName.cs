@@ -25,9 +25,9 @@ public class CogToolBlockAdvancedScript : CogToolBlockAdvancedScriptBase
     public override bool GroupRun(ref string message, ref CogToolResultConstants result)
     {
         // To let the execution stop in this script when a debugger is attached, uncomment the following lines.
-        // #if DEBUG
-        // if (System.Diagnostics.Debugger.IsAttached) System.Diagnostics.Debugger.Break();
-        // #endif
+#if DEBUG
+        if (System.Diagnostics.Debugger.IsAttached) System.Diagnostics.Debugger.Break();
+#endif
 
 
         lable = new List<CogGraphicLabel>();
@@ -54,8 +54,8 @@ public class CogToolBlockAdvancedScript : CogToolBlockAdvancedScriptBase
             //fitCircleTool.Results.GetCircle().Radius = tool.GetPose().
             fitCircleTool.Run();
             CogGraphicLabel label1 = new CogGraphicLabel();
-
-            label1.SetXYText(tool.GetPose().TranslationX, tool.GetPose().TranslationY, fitCircleTool.Results.GetCircle().Radius + "");
+            string radius = fitCircleTool.Results.GetCircle().Radius.ToString("f2");
+            label1.SetXYText(tool.GetPose().TranslationX, tool.GetPose().TranslationY, radius);
             lable.Add(label1);
 
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPeople xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <People>
+    <Name>吴亦凡</Name>
+    <Age>19</Age>
+    <Sex>男</Sex>
+    <Birthday>1999-09-09</Birthday>
+  </People>
+  <People>
+    <Name>王源</Name>
+    <Age>18</Age>
+    <Sex>男</Sex>
+    <Birthday>1999-09-09</Birthday>
+  </People>
+  <People>
+    <Name>吴亦凡</Name>
+    <Age>19</Age>
+    <Sex>男</Sex>
+    <Birthday>2026/07/30</Birthday>
+  </People>
+</ArrayOfPeople>

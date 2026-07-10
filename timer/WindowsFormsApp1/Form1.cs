@@ -87,7 +87,6 @@ namespace WindowsFormsApp1
             {
                 int rNumber = rnd.Next(0, 10);
                 str += rNumber;
-
             }
             List<string> list = new List<string>();
             //MessageBox.Show(str);
@@ -116,12 +115,17 @@ namespace WindowsFormsApp1
             {
                 Point p1 = new Point(rnd.Next(0, bmp.Width), rnd.Next(0, bmp.Height));
                 bmp.SetPixel(p1.X, p1.Y, cor[rnd.Next(0, 4)]);
-            }
+            } 
             //将图片镶嵌到图片框中
             pictureBox1.Image = bmp;
 
 
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            pictureBox1_Click( sender,  e);
         }
     }
 }

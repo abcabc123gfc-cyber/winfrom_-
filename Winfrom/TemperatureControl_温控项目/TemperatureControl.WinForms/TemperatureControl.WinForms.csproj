@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CD16314C-1C71-4842-95EC-0BB778AFA5E5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TemperatureControl.WinForms</RootNamespace>
+    <AssemblyName>TemperatureControl.WinForms</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NModbus4, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NModbus4.2.1.0\lib\net40\NModbus4.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlSugar, Version=5.1.4.207, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlSugar.5.1.4.207\lib\SqlSugar.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\TemperatureGauge.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\UIPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddBase.Designer.cs">
+      <DependentUpon>AddBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBase.Designer.cs">
+      <DependentUpon>frmBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Inbound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Inbound.Designer.cs">
+      <DependentUpon>Inbound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InboundAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InboundAdd.Designer.cs">
+      <DependentUpon>InboundAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InventoryCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InventoryCheck.Designer.cs">
+      <DependentUpon>InventoryCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Outbound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Outbound.Designer.cs">
+      <DependentUpon>Outbound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OutboundAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OutboundAdd.Designer.cs">
+      <DependentUpon>OutboundAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Partition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Partition.Designer.cs">
+      <DependentUpon>Partition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PartitionAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PartitionAdd.Designer.cs">
+      <DependentUpon>PartitionAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductAdd.Designer.cs">
+      <DependentUpon>ProductAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserType.Designer.cs">
+      <DependentUpon>UserType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserAdd.Designer.cs">
+      <DependentUpon>UserAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserTypeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserTypeAdd.Designer.cs">
+      <DependentUpon>UserTypeAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Warehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse.Designer.cs">
+      <DependentUpon>Warehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WarehouseAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WarehouseAdd.Designer.cs">
+      <DependentUpon>WarehouseAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Herper\SQLHerper.cs" />
+    <Compile Include="MainFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrm.Designer.cs">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Inventory.cs" />
+    <Compile Include="Model\OutboundRecord.cs" />
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\StorageRecord.cs" />
+    <Compile Include="Model\Store.cs" />
+    <Compile Include="Model\StoreArea.cs" />
+    <Compile Include="Model\StoreAreaBoxModel.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserINfoState.cs" />
+    <Compile Include="Model\UserType.cs" />
+    <Compile Include="Model\View\VInventory.cs" />
+    <Compile Include="Model\View\VOutboundRecord.cs" />
+    <Compile Include="Model\View\VProduct.cs" />
+    <Compile Include="Model\View\VStorageRecord.cs" />
+    <Compile Include="Model\View\VStore.cs" />
+    <Compile Include="Model\View\VStoreArea.cs" />
+    <Compile Include="Model\View\VStoreAreaBox.cs" />
+    <Compile Include="Model\View\VUser.cs" />
+    <Compile Include="Model\View\VUserType.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\Temperature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Temperature.Designer.cs">
+      <DependentUpon>Temperature.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddBase.resx">
+      <DependentUpon>AddBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBase.resx">
+      <DependentUpon>frmBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inbound.resx">
+      <DependentUpon>Inbound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InboundAdd.resx">
+      <DependentUpon>InboundAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InventoryCheck.resx">
+      <DependentUpon>InventoryCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Outbound.resx">
+      <DependentUpon>Outbound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OutboundAdd.resx">
+      <DependentUpon>OutboundAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Partition.resx">
+      <DependentUpon>Partition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PartitionAdd.resx">
+      <DependentUpon>PartitionAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductAdd.resx">
+      <DependentUpon>ProductAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserType.resx">
+      <DependentUpon>UserType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserAdd.resx">
+      <DependentUpon>UserAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserTypeAdd.resx">
+      <DependentUpon>UserTypeAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse.resx">
+      <DependentUpon>Warehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WarehouseAdd.resx">
+      <DependentUpon>WarehouseAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrm.resx">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Forms\Temperature.resx">
+      <DependentUpon>Temperature.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\add-circle.png" />
+    <Content Include="images\add.png" />
+    <Content Include="images\arrow-double-left.png" />
+    <Content Include="images\arrow-double-right.png" />
+    <Content Include="images\arrow-left-circle.png" />
+    <Content Include="images\arrow-right-circle.png" />
+    <Content Include="images\attachment.png" />
+    <Content Include="images\bad.png" />
+    <Content Include="images\browse.png" />
+    <Content Include="images\camera.png" />
+    <Content Include="images\cangkuguanli.png" />
+    <Content Include="images\check-item.png" />
+    <Content Include="images\close.png" />
+    <Content Include="images\close1.png" />
+    <Content Include="images\close2.png" />
+    <Content Include="images\code.png" />
+    <Content Include="images\cut.png" />
+    <Content Include="images\direction-left.png" />
+    <Content Include="images\direction-right.png" />
+    <Content Include="images\discount.png" />
+    <Content Include="images\edit.png" />
+    <Content Include="images\electronics.png" />
+    <Content Include="images\elipsis.png" />
+    <Content Include="images\email.png" />
+    <Content Include="images\error.png" />
+    <Content Include="images\explain.png" />
+    <Content Include="images\export.png" />
+    <Content Include="images\fabulous.png" />
+    <Content Include="images\favorite.png" />
+    <Content Include="images\file-common.png" />
+    <Content Include="images\file-open.png" />
+    <Content Include="images\file.png" />
+    <Content Include="images\filter.png" />
+    <Content Include="images\good.png" />
+    <Content Include="images\help.png" />
+    <Content Include="images\hide.png" />
+    <Content Include="images\history.png" />
+    <Content Include="images\home.png" />
+    <Content Include="images\lock.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logo1.png" />
+    <Content Include="images\max.png" />
+    <Content Include="images\max2.png" />
+    <Content Include="images\mic.png" />
+    <Content Include="images\min.png" />
+    <Content Include="images\min2.png" />
+    <Content Include="images\minus-circle.png" />
+    <Content Include="images\minus.png" />
+    <Content Include="images\modular.png" />
+    <Content Include="images\more.png" />
+    <Content Include="images\notification.png" />
+    <Content Include="images\picture.png" />
+    <Content Include="images\print.png" />
+    <Content Include="images\refresh.png" />
+    <Content Include="images\save.png" />
+    <Content Include="images\search.png" />
+    <Content Include="images\select.png" />
+    <Content Include="images\setting.png" />
+    <Content Include="images\sign-out.png" />
+    <Content Include="images\success.png" />
+    <Content Include="images\toggle-left.png" />
+    <Content Include="images\toggle-right.png" />
+    <Content Include="images\unlock.png" />
+    <Content Include="images\user.png" />
+    <Content Include="images\wuzicangku.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

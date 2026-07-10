@@ -61,6 +61,7 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Layout += new System.Windows.Forms.LayoutEventHandler(this.groupBox1_Layout);
             // 
             // Form1
             // 
