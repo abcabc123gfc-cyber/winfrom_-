@@ -123,5 +123,10 @@ namespace WindowsFormsApp1
 
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            pictureBox1_Click( sender,  e);
+        }
     }
 }

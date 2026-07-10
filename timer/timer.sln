@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GDI_draw", "WindowsFormsApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows_player", "Windows_player\Windows_player.csproj", "{650CDE2B-5604-4E8D-B888-59A0CBBAD9D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{36850B43-2C72-4E92-AA2C-6BAC9B6E3827}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{650CDE2B-5604-4E8D-B888-59A0CBBAD9D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{650CDE2B-5604-4E8D-B888-59A0CBBAD9D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{650CDE2B-5604-4E8D-B888-59A0CBBAD9D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36850B43-2C72-4E92-AA2C-6BAC9B6E3827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36850B43-2C72-4E92-AA2C-6BAC9B6E3827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36850B43-2C72-4E92-AA2C-6BAC9B6E3827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36850B43-2C72-4E92-AA2C-6BAC9B6E3827}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

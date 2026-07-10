@@ -1,0 +1,14 @@
+<Solution>
+  <Project Path="01_作业/01_作业.csproj" Id="d24ba45d-362c-4d4b-bc45-2fb06233a69b" />
+  <Project Path="02_ 预处理器指令/02_ 预处理器指令.csproj" Id="c868916d-a7b7-4eea-9551-e1384c1df5c2" />
+  <Project Path="03_Conditional条件特性/03_Conditional条件特性.csproj" Id="529939e8-f62e-4df9-a4cc-abf20c826f34" />
+  <Project Path="04_Obsolete废弃特性/04_Obsolete废弃特性.csproj" Id="623a5b6f-59dd-4ff0-b3f5-9cf2f4de6f64" />
+  <Project Path="05_自定义特性/05_自定义特性.csproj" Id="da81170a-e9f1-4ffb-af23-ec7a933986fd" />
+  <Project Path="06_常见特性/06_常见特性.csproj" Id="6283408b-aaa5-409d-a479-e190dad33607" />
+  <Project Path="07_反射/07_反射.csproj" Id="3a19a0fd-9ff0-4704-8597-330ae50ac3a7" />
+  <Project Path="08_反射的应用/08_反射的应用.csproj" Id="012df94a-1eb0-4bb6-ae69-f1d6dfb4b682" />
+  <Project Path="09_加密解密/09_加密解密.csproj" Id="54e9dac6-eea1-4bf4-a36e-9c64df4e5a39" />
+  <Project Path="10_单例模式/10_单例模式.csproj" Id="9c00dd48-6dac-46e9-9fe2-e9f41c5665b8" />
+  <Project Path="ClassLibrary1/ClassLibrary1.csproj" Id="f5c66429-cbdf-4159-bcf1-38763ae609e4" />
+  <Project Path="EncryptTool/EncryptTool.csproj" Id="48b1e07a-7149-4a63-9592-fb3278b4ddde" />
+</Solution>

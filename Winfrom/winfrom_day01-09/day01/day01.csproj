@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{688BC440-04FA-4DBC-B523-0C51A48D497B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>day01</RootNamespace>
+    <AssemblyName>day01</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="button 控件.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="button 控件.Designer.cs">
+      <DependentUpon>button 控件.cs</DependentUpon>
+    </Compile>
+    <Compile Include="label 控件.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="label 控件.Designer.cs">
+      <DependentUpon>label 控件.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextBox控件.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextBox控件.Designer.cs">
+      <DependentUpon>TextBox控件.cs</DependentUpon>
+    </Compile>
+    <Compile Include="事件.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="事件.Designer.cs">
+      <DependentUpon>事件.cs</DependentUpon>
+    </Compile>
+    <Compile Include="事件驱动机制.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="事件驱动机制.Designer.cs">
+      <DependentUpon>事件驱动机制.cs</DependentUpon>
+    </Compile>
+    <Compile Include="第一个窗体.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="第一个窗体.Designer.cs">
+      <DependentUpon>第一个窗体.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="button 控件.resx">
+      <DependentUpon>button 控件.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="label 控件.resx">
+      <DependentUpon>label 控件.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TextBox控件.resx">
+      <DependentUpon>TextBox控件.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="事件驱动机制.resx">
+      <DependentUpon>事件驱动机制.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="第一个窗体.resx">
+      <DependentUpon>第一个窗体.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\屏幕截图 2026-06-07 160624.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

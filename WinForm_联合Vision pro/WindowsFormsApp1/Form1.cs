@@ -15,6 +15,17 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            this.button1.Click += MyButton_Click;
+        }
+
+        private void MyButton_Click(object sender, EventArgs e)
+        {
+         this.button1.Text = "点击了按钮";
+        }
+
+        private void groupBox1_Layout(object sender, LayoutEventArgs e)
+        {
+
         }
     }
 }

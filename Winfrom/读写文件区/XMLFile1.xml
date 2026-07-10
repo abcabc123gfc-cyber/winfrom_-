@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Students>
+ 
+  <Student>
+    <StuName>孟钰</StuName>
+    <StuAge>16</StuAge>
+    <StuGender>女</StuGender>
+    <StuClass>C#一班</StuClass>
+  </Student>
+  <Student>
+    <StuName>小五</StuName>
+    <StuAge>22</StuAge>
+    <StuGender>女</StuGender>
+    <StuClass>C#二班</StuClass>
+  </Student>
+  <Student>
+    <StuName>安欣</StuName>
+    <StuAge>21</StuAge>
+    <StuGender>男</StuGender>
+    <StuClass>C#三班</StuClass>
+  </Student>
+  <Student>
+    <StuName>赵立冬</StuName>
+    <StuAge>23</StuAge>
+    <StuGender>男</StuGender>
+    <StuClass>C#三班</StuClass>
+  </Student>
+  <!--<DataInfo>
+    <Version versionNum="2.1" pTime="2023-03-28">数据版本信息</Version>
+  </DataInfo>-->
+</Students>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37314.3 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "串口助手_核心代码", "串口助手\串口助手_核心代码.csproj", "{55870AB3-46BF-48ED-AFB7-481B25D23C2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "串口助手完整", "串口助手完整\串口助手完整.csproj", "{95847C48-3AAD-45BC-B663-F16828AEBBFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55870AB3-46BF-48ED-AFB7-481B25D23C2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55870AB3-46BF-48ED-AFB7-481B25D23C2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55870AB3-46BF-48ED-AFB7-481B25D23C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55870AB3-46BF-48ED-AFB7-481B25D23C2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95847C48-3AAD-45BC-B663-F16828AEBBFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95847C48-3AAD-45BC-B663-F16828AEBBFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95847C48-3AAD-45BC-B663-F16828AEBBFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95847C48-3AAD-45BC-B663-F16828AEBBFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8703E679-E447-4071-882C-F15F1E70F65E}
+	EndGlobalSection
+EndGlobal
