@@ -533,7 +533,6 @@ namespace DAL
                     "CustomerInfo.xlsx",
                     "AddressInfo.xlsx",
                };
-            //拼接sql语句
             string sql = @"SELECT * FROM UserInfo ;  SELECT * FROM CustomerInfo; SELECT * FROM AddressInfo;";
             //对数据进行查询获取 dataset:表集合
             DataSet dataSet = GetDataSet(sql);
@@ -541,9 +540,7 @@ namespace DAL
             CustomerDAL customerDAL = new CustomerDAL();
             for (int i = 0; i < str.Length; i++)
             {
-                //获取要保存的文件路径
                 string filePath = Path.Combine(GetDirectoryExcel(), str[i]);
-                //预创建文件 : EPPlus在写入数据之前不能创建 实体文件
                 FileInfo fileInfo = new FileInfo(filePath);
                 //创建流
                 using (ExcelPackage excel = new ExcelPackage(fileInfo))

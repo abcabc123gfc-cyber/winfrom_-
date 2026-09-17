@@ -43,7 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="接口隔离.cs" />
+    <Compile Include="接口隔离_胖接口.cs" />
+    <Compile Include="接口隔离_设计失误.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
