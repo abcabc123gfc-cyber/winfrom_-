@@ -1,12 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
+VisualStudioVersion = 17.14.37314.3 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "接口与抽象类", "C#演示Demo\接口与抽象类.csproj", "{CE3C048B-5A94-48E3-8C59-1C48C399C340}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "接口与抽象类.Tests", "接口与抽象类.Tests\接口与抽象类.Tests.csproj", "{C8CBB432-FDCB-463D-9108-1F0BEFAD09B2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "接口_依赖注入", "接口_依赖注入\接口_依赖注入.csproj", "{F05521E0-5523-464D-87B7-3B147D80F62E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "反射", "反射\反射.csproj", "{AE40A62E-06BE-4D77-ADE0-7F65DEA29AA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +29,10 @@ Global
 		{F05521E0-5523-464D-87B7-3B147D80F62E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F05521E0-5523-464D-87B7-3B147D80F62E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F05521E0-5523-464D-87B7-3B147D80F62E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE40A62E-06BE-4D77-ADE0-7F65DEA29AA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE40A62E-06BE-4D77-ADE0-7F65DEA29AA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE40A62E-06BE-4D77-ADE0-7F65DEA29AA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE40A62E-06BE-4D77-ADE0-7F65DEA29AA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

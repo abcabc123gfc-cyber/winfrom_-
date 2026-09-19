@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cogRecordsDisplay1 = new Cognex.VisionPro.CogRecordsDisplay();
-            this.cogRecordsDisplay2 = new Cognex.VisionPro.CogRecordsDisplay();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,44 +45,35 @@
             this.相机1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.编辑作业ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.作业1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.选择TBVPPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.参数设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.其他设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.通信设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.离线测试ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.单张图片ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.文件夹ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.cogRecordDisplay1 = new Cognex.VisionPro.CogRecordDisplay();
+            this.cogRecordDisplay2 = new Cognex.VisionPro.CogRecordDisplay();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cogRecordDisplay1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cogRecordDisplay2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cogRecordsDisplay1
-            // 
-            this.cogRecordsDisplay1.Location = new System.Drawing.Point(12, 89);
-            this.cogRecordsDisplay1.Name = "cogRecordsDisplay1";
-            this.cogRecordsDisplay1.SelectedRecordKey = null;
-            this.cogRecordsDisplay1.ShowRecordsDropDown = true;
-            this.cogRecordsDisplay1.Size = new System.Drawing.Size(830, 1176);
-            this.cogRecordsDisplay1.Subject = null;
-            this.cogRecordsDisplay1.TabIndex = 0;
-            // 
-            // cogRecordsDisplay2
-            // 
-            this.cogRecordsDisplay2.Location = new System.Drawing.Point(876, 89);
-            this.cogRecordsDisplay2.Name = "cogRecordsDisplay2";
-            this.cogRecordsDisplay2.SelectedRecordKey = null;
-            this.cogRecordsDisplay2.ShowRecordsDropDown = true;
-            this.cogRecordsDisplay2.Size = new System.Drawing.Size(830, 1176);
-            this.cogRecordsDisplay2.Subject = null;
-            this.cogRecordsDisplay2.TabIndex = 0;
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 24;
-            this.listBox1.Location = new System.Drawing.Point(1781, 325);
+            this.listBox1.Location = new System.Drawing.Point(1769, 325);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(426, 940);
+            this.listBox1.Size = new System.Drawing.Size(438, 940);
             this.listBox1.TabIndex = 1;
             // 
             // panel1
@@ -94,7 +85,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.labelZ);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(1744, 36);
+            this.panel1.Location = new System.Drawing.Point(1769, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(447, 269);
             this.panel1.TabIndex = 2;
@@ -189,7 +180,8 @@
             this.相机设置ToolStripMenuItem,
             this.编辑作业ToolStripMenuItem,
             this.参数设置ToolStripMenuItem,
-            this.其他设置ToolStripMenuItem});
+            this.其他设置ToolStripMenuItem,
+            this.离线测试ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(2433, 39);
@@ -199,7 +191,7 @@
             // 系统ToolStripMenuItem
             // 
             this.系统ToolStripMenuItem.Name = "系统ToolStripMenuItem";
-            this.系统ToolStripMenuItem.Size = new System.Drawing.Size(82, 35);
+            this.系统ToolStripMenuItem.Size = new System.Drawing.Size(82, 38);
             this.系统ToolStripMenuItem.Text = "系统";
             // 
             // 相机设置ToolStripMenuItem
@@ -207,33 +199,43 @@
             this.相机设置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.相机1ToolStripMenuItem});
             this.相机设置ToolStripMenuItem.Name = "相机设置ToolStripMenuItem";
-            this.相机设置ToolStripMenuItem.Size = new System.Drawing.Size(130, 35);
+            this.相机设置ToolStripMenuItem.Size = new System.Drawing.Size(130, 38);
             this.相机设置ToolStripMenuItem.Text = "相机设置";
             // 
             // 相机1ToolStripMenuItem
             // 
             this.相机1ToolStripMenuItem.Name = "相机1ToolStripMenuItem";
-            this.相机1ToolStripMenuItem.Size = new System.Drawing.Size(209, 44);
+            this.相机1ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.相机1ToolStripMenuItem.Text = "相机1";
+            this.相机1ToolStripMenuItem.Click += new System.EventHandler(this.相机1ToolStripMenuItem_Click);
             // 
             // 编辑作业ToolStripMenuItem
             // 
             this.编辑作业ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.作业1ToolStripMenuItem});
+            this.作业1ToolStripMenuItem,
+            this.选择TBVPPToolStripMenuItem});
             this.编辑作业ToolStripMenuItem.Name = "编辑作业ToolStripMenuItem";
-            this.编辑作业ToolStripMenuItem.Size = new System.Drawing.Size(130, 35);
+            this.编辑作业ToolStripMenuItem.Size = new System.Drawing.Size(130, 38);
             this.编辑作业ToolStripMenuItem.Text = "编辑作业";
             // 
             // 作业1ToolStripMenuItem
             // 
             this.作业1ToolStripMenuItem.Name = "作业1ToolStripMenuItem";
-            this.作业1ToolStripMenuItem.Size = new System.Drawing.Size(209, 44);
+            this.作业1ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.作业1ToolStripMenuItem.Text = "作业1";
+            this.作业1ToolStripMenuItem.Click += new System.EventHandler(this.作业1ToolStripMenuItem_Click);
+            // 
+            // 选择TBVPPToolStripMenuItem
+            // 
+            this.选择TBVPPToolStripMenuItem.Name = "选择TBVPPToolStripMenuItem";
+            this.选择TBVPPToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.选择TBVPPToolStripMenuItem.Text = "选择TB_VPP";
+            this.选择TBVPPToolStripMenuItem.Click += new System.EventHandler(this.选择TBVPPToolStripMenuItem_Click);
             // 
             // 参数设置ToolStripMenuItem
             // 
             this.参数设置ToolStripMenuItem.Name = "参数设置ToolStripMenuItem";
-            this.参数设置ToolStripMenuItem.Size = new System.Drawing.Size(130, 35);
+            this.参数设置ToolStripMenuItem.Size = new System.Drawing.Size(130, 38);
             this.参数设置ToolStripMenuItem.Text = "参数设置";
             // 
             // 其他设置ToolStripMenuItem
@@ -241,14 +243,38 @@
             this.其他设置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.通信设置ToolStripMenuItem});
             this.其他设置ToolStripMenuItem.Name = "其他设置ToolStripMenuItem";
-            this.其他设置ToolStripMenuItem.Size = new System.Drawing.Size(130, 35);
+            this.其他设置ToolStripMenuItem.Size = new System.Drawing.Size(130, 38);
             this.其他设置ToolStripMenuItem.Text = "其他设置";
             // 
             // 通信设置ToolStripMenuItem
             // 
             this.通信设置ToolStripMenuItem.Name = "通信设置ToolStripMenuItem";
-            this.通信设置ToolStripMenuItem.Size = new System.Drawing.Size(243, 44);
+            this.通信设置ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.通信设置ToolStripMenuItem.Text = "通信设置";
+            this.通信设置ToolStripMenuItem.Click += new System.EventHandler(this.通信设置ToolStripMenuItem_Click);
+            // 
+            // 离线测试ToolStripMenuItem
+            // 
+            this.离线测试ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.单张图片ToolStripMenuItem,
+            this.文件夹ToolStripMenuItem});
+            this.离线测试ToolStripMenuItem.Name = "离线测试ToolStripMenuItem";
+            this.离线测试ToolStripMenuItem.Size = new System.Drawing.Size(130, 38);
+            this.离线测试ToolStripMenuItem.Text = "离线测试";
+            // 
+            // 单张图片ToolStripMenuItem
+            // 
+            this.单张图片ToolStripMenuItem.Name = "单张图片ToolStripMenuItem";
+            this.单张图片ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.单张图片ToolStripMenuItem.Text = "单张图片";
+            this.单张图片ToolStripMenuItem.Click += new System.EventHandler(this.单张图片ToolStripMenuItem_Click);
+            // 
+            // 文件夹ToolStripMenuItem
+            // 
+            this.文件夹ToolStripMenuItem.Name = "文件夹ToolStripMenuItem";
+            this.文件夹ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.文件夹ToolStripMenuItem.Text = "文件夹";
+            this.文件夹ToolStripMenuItem.Click += new System.EventHandler(this.文件夹ToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -274,16 +300,83 @@
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(257, 31);
             this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(12, 770);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1650, 494);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(802, 46);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(153, 74);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "离线运行";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // cogRecordDisplay1
+            // 
+            this.cogRecordDisplay1.ColorMapLowerClipColor = System.Drawing.Color.Black;
+            this.cogRecordDisplay1.ColorMapLowerRoiLimit = 0D;
+            this.cogRecordDisplay1.ColorMapPredefined = Cognex.VisionPro.Display.CogDisplayColorMapPredefinedConstants.None;
+            this.cogRecordDisplay1.ColorMapUpperClipColor = System.Drawing.Color.Black;
+            this.cogRecordDisplay1.ColorMapUpperRoiLimit = 1D;
+            this.cogRecordDisplay1.DoubleTapZoomCycleLength = 2;
+            this.cogRecordDisplay1.DoubleTapZoomSensitivity = 2.5D;
+            this.cogRecordDisplay1.Location = new System.Drawing.Point(12, 144);
+            this.cogRecordDisplay1.MouseWheelMode = Cognex.VisionPro.Display.CogDisplayMouseWheelModeConstants.Zoom1;
+            this.cogRecordDisplay1.MouseWheelSensitivity = 1D;
+            this.cogRecordDisplay1.Name = "cogRecordDisplay1";
+            this.cogRecordDisplay1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("cogRecordDisplay1.OcxState")));
+            this.cogRecordDisplay1.Size = new System.Drawing.Size(755, 620);
+            this.cogRecordDisplay1.TabIndex = 0;
+            // 
+            // cogRecordDisplay2
+            // 
+            this.cogRecordDisplay2.ColorMapLowerClipColor = System.Drawing.Color.Black;
+            this.cogRecordDisplay2.ColorMapLowerRoiLimit = 0D;
+            this.cogRecordDisplay2.ColorMapPredefined = Cognex.VisionPro.Display.CogDisplayColorMapPredefinedConstants.None;
+            this.cogRecordDisplay2.ColorMapUpperClipColor = System.Drawing.Color.Black;
+            this.cogRecordDisplay2.ColorMapUpperRoiLimit = 1D;
+            this.cogRecordDisplay2.DoubleTapZoomCycleLength = 2;
+            this.cogRecordDisplay2.DoubleTapZoomSensitivity = 2.5D;
+            this.cogRecordDisplay2.Location = new System.Drawing.Point(802, 149);
+            this.cogRecordDisplay2.MouseWheelMode = Cognex.VisionPro.Display.CogDisplayMouseWheelModeConstants.Zoom1;
+            this.cogRecordDisplay2.MouseWheelSensitivity = 1D;
+            this.cogRecordDisplay2.Name = "cogRecordDisplay2";
+            this.cogRecordDisplay2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("cogRecordDisplay2.OcxState")));
+            this.cogRecordDisplay2.Size = new System.Drawing.Size(755, 620);
+            this.cogRecordDisplay2.TabIndex = 0;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(617, 70);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(138, 28);
+            this.checkBox1.TabIndex = 7;
+            this.checkBox1.Text = "连续运行";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2433, 1347);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cogRecordDisplay2);
+            this.Controls.Add(this.cogRecordDisplay1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.cogRecordsDisplay2);
-            this.Controls.Add(this.cogRecordsDisplay1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "frmMain";
             this.Text = "Form1";
@@ -294,15 +387,14 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cogRecordDisplay1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cogRecordDisplay2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Cognex.VisionPro.CogRecordsDisplay cogRecordsDisplay1;
-        private Cognex.VisionPro.CogRecordsDisplay cogRecordsDisplay2;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
@@ -324,6 +416,15 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripMenuItem 离线测试ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 单张图片ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 文件夹ToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem 选择TBVPPToolStripMenuItem;
+        private Cognex.VisionPro.CogRecordDisplay cogRecordDisplay1;
+        private Cognex.VisionPro.CogRecordDisplay cogRecordDisplay2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

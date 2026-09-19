@@ -16,7 +16,9 @@ namespace WinForm_联合Vision_pro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new Form1());
+            //Application.Run(new Load_frmCamera());
+            Application.Run(new Load_frmCamera_RunTB());
         }
     }
 }

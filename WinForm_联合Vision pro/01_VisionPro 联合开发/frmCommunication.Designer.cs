@@ -30,7 +30,6 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.textBoxPort = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -86,22 +86,6 @@
             this.tabPage1.Text = "串口";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.textBoxPort);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.textBoxIP);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.checkBox2);
-            this.tabPage2.Location = new System.Drawing.Point(8, 39);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1374, 1178);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "TCP";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(998, 488);
@@ -111,6 +95,7 @@
             this.button1.TabIndex = 23;
             this.button1.Text = "保存";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox5
             // 
@@ -219,6 +204,22 @@
             this.checkBox1.Text = "启用";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.textBoxPort);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.textBoxIP);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.checkBox2);
+            this.tabPage2.Location = new System.Drawing.Point(8, 39);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1374, 1178);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "TCP";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(950, 445);
@@ -228,6 +229,7 @@
             this.button2.TabIndex = 18;
             this.button2.Text = "保存";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBoxPort
             // 
@@ -287,6 +289,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "frmCommunication";
             this.Text = "frmCommunication";
+            this.Load += new System.EventHandler(this.frmCommunication_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

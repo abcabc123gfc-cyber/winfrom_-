@@ -17,6 +17,7 @@ namespace _01_VisionPro_联合开发
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain());
+            //Application.Run(new frmBlock());
         }
     }
 }

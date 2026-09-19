@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Cognex.VisionPro, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
@@ -390,10 +393,39 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="IniAPI.cs" />
+    <Compile Include="Load_ qb_job_tool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Load_ qb_job_tool.Designer.cs">
+      <DependentUpon>Load_ qb_job_tool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Load_frmCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Load_frmCamera.Designer.cs">
+      <DependentUpon>Load_frmCamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Load_frmCamera_RunTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Load_frmCamera_RunTB.Designer.cs">
+      <DependentUpon>Load_frmCamera_RunTB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Load_ qb_job_tool.resx">
+      <DependentUpon>Load_ qb_job_tool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Load_frmCamera.resx">
+      <DependentUpon>Load_frmCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Load_frmCamera_RunTB.resx">
+      <DependentUpon>Load_frmCamera_RunTB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -404,6 +436,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
