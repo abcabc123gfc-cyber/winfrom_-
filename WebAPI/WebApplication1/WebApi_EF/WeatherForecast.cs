@@ -1,9 +1,7 @@
-﻿namespace WebApplication1
+namespace WebApi_EF
 {
-    //天气预报 模型 放到Model
     public class WeatherForecast
     {
-        //DateOnly    .netcore才有 
         public DateOnly Date { get; set; }
 
         public int TemperatureC { get; set; }

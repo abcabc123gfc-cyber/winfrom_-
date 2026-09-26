@@ -39,6 +39,7 @@
             // btnSearch
             // 
             this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
             // button2
             // 

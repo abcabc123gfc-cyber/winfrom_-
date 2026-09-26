@@ -1,0 +1,6 @@
+@MES项目练习_HostAddress = http://localhost:5036
+
+GET {{MES项目练习_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

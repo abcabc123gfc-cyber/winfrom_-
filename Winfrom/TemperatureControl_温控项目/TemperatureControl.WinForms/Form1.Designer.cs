@@ -182,6 +182,7 @@
             this.label5.Size = new System.Drawing.Size(111, 57);
             this.label5.TabIndex = 3;
             this.label5.Text = "登录";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // uiPanel3
             // 

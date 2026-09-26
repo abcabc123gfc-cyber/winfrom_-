@@ -1,23 +1,23 @@
 ﻿{
   "$schema": "http://json.schemastore.org/launchsettings.json",
   "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
+    "windowsAuthentication": false, //禁用Windows身份验证
+    "anonymousAuthentication": true,//启用匿名身份验证
     "iisExpress": {
-      "applicationUrl": "http://localhost:2553",
-      "sslPort": 44337
+        "applicationUrl": "http://localhost:2553", //iisExpress 的 http地址
+        "sslPort": 44337 //端口重定向
     }
   },
   "profiles": {
     "http": {
-      "commandName": "Project",
-      "dotnetRunMessages": true,
-      "launchBrowser": true,
-      "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:5143",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+        "commandName": "Project", //项目启动方式 启动当前项目 而不是 启动IIS(iisExpress)
+        "dotnetRunMessages": true, //在控制台输出运行时信息
+        "launchBrowser": true, //启动浏览器 自动打开
+        "launchUrl": "swagger", //启动浏览器的默认页面 导航到: swagger swagger: 接口调试工具
+        "applicationUrl": "http://localhost:5143",// 监听http 端口5143
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development" //设置环境为: 开发环境
+        }
     },
     "https": {
       "commandName": "Project",
