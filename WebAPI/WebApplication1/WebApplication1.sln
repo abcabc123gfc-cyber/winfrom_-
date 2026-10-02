@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI_练习", "WebAPI\Web
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi_练习_1", "WebApi_练习_1\WebApi_练习_1.csproj", "{9C110C85-9584-4CC6-A8E5-3548D23C3BFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi_EF", "WebApi_EF\WebApi_EF.csproj", "{5F05A431-60D6-4D19-B2CE-70807E14502F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi_EF_代码优先", "WebApi_EF\WebApi_EF_代码优先.csproj", "{5F05A431-60D6-4D19-B2CE-70807E14502F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

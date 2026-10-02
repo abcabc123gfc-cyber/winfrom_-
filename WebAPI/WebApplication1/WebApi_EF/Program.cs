@@ -1,3 +1,6 @@
+﻿
+using Microsoft.EntityFrameworkCore;
+using WebApi_EF.Contexts;
 
 namespace WebApi_EF
 {
@@ -14,6 +17,16 @@ namespace WebApi_EF
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            #region 添加EF框架
+            builder.Services.AddDbContext<TextDBContext>(options =>
+            {
+                string? str = builder.Configuration["Configuration:Backend"];
+                Console.WriteLine(str);
+                //需要添加 Microsoft.EntityFrameworkCore.SqlServer 包
+                options.UseSqlServer(str);
+
+            });
+            #endregion
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
