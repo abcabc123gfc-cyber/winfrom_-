@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using SqlSugar;
 
 namespace MES项目练习
@@ -32,6 +33,15 @@ namespace MES项目练习
                { });
                 return sqlSugar;
             });
+            #endregion
+            #region 注册EFCore框架
+            
+            builder.Services.AddDbContext<WebAPI_练习.TextDBContext>(options =>
+            {
+                string? str1 = builder.Configuration.GetConnectionString("BankConnstring");
+                options.UseSqlServer(str1);
+            }
+              );
             #endregion
             // Add services to the container.
 

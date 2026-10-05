@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37314.3 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "雷赛运动控制卡", "雷赛运动控制卡\雷赛运动控制卡.csproj", "{ECECCF67-7E99-42D6-88FD-A9FC1EA9FC5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECECCF67-7E99-42D6-88FD-A9FC1EA9FC5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECECCF67-7E99-42D6-88FD-A9FC1EA9FC5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECECCF67-7E99-42D6-88FD-A9FC1EA9FC5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECECCF67-7E99-42D6-88FD-A9FC1EA9FC5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD26B094-B4D8-4589-AAFD-73E31C7BC3DD}
+	EndGlobalSection
+EndGlobal

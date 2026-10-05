@@ -133,5 +133,10 @@ namespace Web测试
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            new Form2().Show();
+        }
     }
 }

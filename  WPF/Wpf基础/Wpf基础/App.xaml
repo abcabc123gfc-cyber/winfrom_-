@@ -1,0 +1,36 @@
+﻿<!--Application 应用程序实例, 一般情况下,只有一个,主要职责就是用来启动应用程序
+    <Application> 开始标签  </Application> 结束标签
+     x:Class="WpfApp1.App"  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"\
+     键 值 对
+     引用命名空间 相当于之前学过的using语句
+     xmlns:x  引用命名空间之后 取个别名
+    StartupUri ="MainWindow.xaml"  启动窗口-->
+
+<Application
+    x:Class="Wpf基础.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Wpf基础"
+    StartupUri="MainWindow.xaml">
+    <!--  Application.Resources 应用程序的资源:样式 图片 字体文件 音频 视频....  -->
+    <!--  全局样式  -->
+    <Application.Resources>
+        <!--<ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/ButtonStyle.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>-->
+        <ResourceDictionary>
+            <Style x:Key="buttonDefultAll" TargetType="Button">
+                <Setter Property="Width" Value="100" />
+                <Setter Property="Height" Value="30" />
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="Background" Value="Yellow" />
+                <Setter Property="Foreground" Value="Red" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+
+
+
+</Application>

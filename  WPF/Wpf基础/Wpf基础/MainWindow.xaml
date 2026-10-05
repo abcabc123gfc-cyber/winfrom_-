@@ -1,0 +1,56 @@
+﻿<Window
+    x:Class="Wpf基础.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Wpf基础"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <!--  局部样式  -->
+    <StackPanel
+        Width="400"
+        Height="200"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+        <Label
+            Width="100"
+            Height="30"
+            Margin="70,60,0,0"
+            HorizontalAlignment="Left"
+            Content="Account"
+            FontSize="20"
+            Foreground="Red" />
+        <Label
+            Width="100"
+            Height="30"
+            Margin="70,20,0,0"
+            HorizontalAlignment="Left"
+            Content="Password"
+            FontSize="20"
+            Foreground="Red" />
+        <TextBox
+            x:Name="txtAccount"
+            Width="150"
+            Height="30"
+            Margin="0,-140,40,0"
+            HorizontalAlignment="Right" />
+        <TextBox
+            x:Name="txtPassword"
+            Width="150"
+            Height="30"
+            Margin="0,-40,40,0"
+            HorizontalAlignment="Right" />
+        <Button
+            x:Name="btnLogin"
+            Width="150"
+            Height="30"
+            Margin="0,20,0,0"
+            HorizontalAlignment="Center"
+            Background="#399AE7"
+            Content="Login"
+            Click="btnLogin_Click"/>
+    </StackPanel>
+</Window>

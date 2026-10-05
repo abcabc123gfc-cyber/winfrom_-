@@ -1,0 +1,61 @@
+﻿<Window
+    x:Class="Wpf基础.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Wpf基础"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="标题"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <!--  局部样式  -->
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="buttonDefultSytle" TargetType="Button">
+                <Setter Property="Background" Value="Red" />
+                <Setter Property="Foreground" Value="Yellow" />
+                <Setter Property="Height" Value="40" />
+                <Setter Property="Width" Value="50" />
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <!--  分组  -->
+    <Grid>
+        <!--  StackPanel 堆栈  面板 布局控件  -->
+        <StackPanel Width="200" HorizontalAlignment="Left">
+            <!--  绑定样式  -->
+            <Button Content="按钮1" Style="{StaticResource buttonDefultSytle}" />
+            <!--  行内样式  -->
+            <!--Content 内容区域  相当于<开始标签></结束标签> 中间的区域-->
+            <Button Content="按钮2" Foreground="Aqua" />
+            <Image
+                Width="200"
+                Height="100"
+                Source="/Image/bd.png" />
+        </StackPanel>
+        <Button
+     Width="400"
+     Height="200"
+     Content="按钮112"
+     Style="{StaticResource ResourceKey=buttonDefultAll}" />
+        <ComboBox Width="100" Height="100">
+            <ComboBoxItem>1</ComboBoxItem>
+            <ComboBoxItem>2</ComboBoxItem>
+
+        </ComboBox>
+        <!--
+     错误: 一个控件的Content内容属性 只能设置一次  也就说 一个控件只能有一个子控件
+     如果需要多个子控件 就可以使用布局控件来实现
+ -->
+        <Label>
+            <StackPanel>
+                <Button>123</Button>
+                <!--<Image
+             Width="200"
+             Height="200"
+             Source="/Image/bd.png" />-->
+            </StackPanel>
+        </Label>
+    </Grid>
+</Window>
