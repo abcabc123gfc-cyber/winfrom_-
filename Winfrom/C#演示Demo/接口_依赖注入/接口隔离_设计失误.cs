@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace 接口_依赖注入
 {
     // ---------- 接口 ----------
@@ -109,6 +110,7 @@ namespace 接口_依赖注入
         public void Drive()
         {
             _truck.Run();
+            
         }
     }
 }

@@ -1,0 +1,85 @@
+﻿<Window
+    x:Class="Wpf基础.Window2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Wpf基础"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Window2"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <!--  样式设置  -->
+    <!--  局部样式:  只能在当前窗口中使用  -->
+    <Window.Resources>
+        <!--<ResourceDictionary>-->
+        <!--  x:Key= 给样式命名  TargetType 定义的样式在哪个控件上使用  -->
+        <Style x:Key="buttonDefultStyle" TargetType="Button">
+            <!--  Property 样式的属性名  Value 样式的属性值  -->
+            <Setter Property="Width" Value="100" />
+        </Style>
+
+        <!--
+            FontSize 设置字体大小
+            FontFamily  字体样式
+            Margin  外边距  两个元素之间的间距
+            设置一个值表示 上下左右 四个方向
+            设置两个值 左右 上下
+            设置四个值  左  上 右 下
+            
+            Padding 内边距  元素内容到元素边框的间距
+        -->
+        <Style x:Key="textBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="楷体" />
+            <Setter Property="Margin" Value="10,20,30,40" />
+            <Setter Property="Padding" Value="10" />
+        </Style>
+        <!--</ResourceDictionary>-->
+    </Window.Resources>
+    <Grid>
+        <!--
+            样式: 行内样式  局部样式  全局样式
+            样式具有一定的优先级 什么是优先级? 同时设置多个样式的时候,生效的优先性
+            1.行内样式 > 局部样式 > 全局样式
+            行内样式: 直接在控件上设置的样式
+            局部样式  Window.Resources
+            全局样式 Application.Resources
+        -->
+        <!--<Button Style="{StaticResource buttonDefultStyle}">按钮1</Button>-->
+
+        <!--
+            Style="{StaticResource textBlockStyle}"> 绑定静态资源  后续还有绑定动态资源
+            Style="{StaticResource ResourceKey=textBlockStyle}"
+        -->
+        <!--<TextBlock
+          Width="100"
+          Height="100"
+          Background="Red"
+          Foreground="Yellow"
+          Margin="100"
+          FontSize="10"
+          Style="{StaticResource ResourceKey=textBlockStyle}">
+          内容
+      </TextBlock>-->
+
+
+        <!--
+            HorizontalAlignment  水平方向的对齐方式
+            
+            VerticalAlignment    垂直方向的对齐方式
+            Center 居中  Top 顶部  Bottom 底部  Left 左边  Right 右边  Stretch 默认值 拉伸沾满父元素
+            VerticalContentAlignment  HorizontalContentAlignment  Content 内容 设置内容的对齐方式
+        -->
+        <Button
+            Width="200"
+            Height="200"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Left"
+            VerticalContentAlignment="Bottom"
+            FontSize="20">
+            按钮
+        </Button>
+    </Grid>
+</Window>

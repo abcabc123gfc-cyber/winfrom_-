@@ -43,11 +43,12 @@ namespace WebApi_练习_1
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "任务列表API"); // 设置swagger为默认页面
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseHttpsRedirection();
 

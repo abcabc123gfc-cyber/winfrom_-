@@ -1,0 +1,46 @@
+﻿<Window
+    x:Class="_05_绑定值.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:_05_绑定值"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    Loaded="Window_Loaded"
+    mc:Ignorable="d">
+    <!--  xmlns:sys="clr-namespace:System;assembly=mscorlib" 引入命名空间  -->
+    <!--
+        x:Key 就是给资源字典里的资源起一个唯一的名字（键）。
+        资源字典本质是一个“键值对”集合，x:Key 就是那个“键”，
+        以后通过这个键来找到对应的值。
+    -->
+
+    <!--
+        需要定义一个string类型的变量: xaml文件中,没有string类型,需要引入对应的命名空间
+        xmlns:sys="clr-namespace:System;assembly=mscorlib" 并且去了别名 叫做sys
+        
+        需要在引入对应的命名空间之后, 先右键重新编译,编译之后,书写代码才会有提示
+    -->
+    <Window.Resources>
+        <ResourceDictionary>
+            <sys:String x:Key="str1">wyf</sys:String>
+            <SolidColorBrush x:Key="brush1" Color="Red" />
+            <x:Array x:Key="array1" Type="sys:String">
+                <sys:String>wyf1</sys:String>
+                <sys:String>wyf2</sys:String>
+            </x:Array>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <TextBox
+            Width="100"
+            Height="100"
+            Background="{StaticResource brush1}"
+            Text="{StaticResource str1}" />
+        <!--<ListBox x:Name="listBox1" Height="80" />-->
+        <ListBox x:Name="listBox2" Height="80" ItemsSource="{StaticResource array1 }"/>
+    </Grid>
+</Window>

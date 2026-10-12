@@ -1,0 +1,22 @@
+﻿<Window
+    x:Class="手动Prism.Views.LoginWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:手动Prism.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   xmlns:prism="http://prismlibrary.com/"
+     
+    Title="LoginWindow"
+    Width="800"
+    Height="450"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
+    <Grid>
+        <Button
+            Width="100"
+            Height="100"
+            Command="{Binding LoginCommand}"
+            Content="登录" />
+    </Grid>
+</Window>

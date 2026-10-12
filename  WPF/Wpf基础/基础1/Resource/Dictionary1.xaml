@@ -1,0 +1,46 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="LabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Grid.Row" Value="0" />
+        <!--
+            _Account:   不添加_ 就是普通的文本  如果加了_ 就会变成一个快捷方式  Alt+ X 的快捷方式
+            Alt + a 组合键
+        -->
+        <Setter Property="Content" Value="_Account" />
+        <!--
+            把一个name属性值 为txtAccount 的元素 和当前Lable关联起来,
+            这样的话 当按下Alt+a的时候,就会把交代呢设置到txtAccount
+        -->
+        <Setter Property="Target" Value="{Binding ElementName=textAccount}" />
+    </Style>
+
+    <Style x:Key="LableStyle2" TargetType="Label">
+        <Setter Property="Grid.Row" Value="1" />
+        <Setter Property="Grid.Column" Value="0" />
+        <Setter Property="Content" Value="_Password:" />
+        <Setter Property="Margin" Value="0,10" />
+        <Setter Property="Target" Value="{Binding ElementName=txtPassword}" />
+    </Style>
+    <!--  继承样式  -->
+    <!--  通用样式  -->
+    <Style x:Key="ControlBase" TargetType="Control">
+        <Setter Property="Background" Value="Red" />
+        <Setter Property="Grid.Column" Value="0" />
+        <Setter Property="Margin" Value="0,10" />
+    </Style>
+    <!--  继承通用样式 标签  -->
+    <Style
+        x:Key="LableStyle3"
+        BasedOn="{StaticResource ControlBase}"
+        TargetType="Label">
+        <Setter Property="Content" Value="_Name:" />
+    </Style>
+    <!--  继承通用样式 文本框  -->
+    <Style
+        x:Key="TextStyle"
+        BasedOn="{StaticResource ControlBase}"
+        TargetType="TextBlock">
+        <Setter Property="Background" Value="Gray" />
+    </Style>
+
+</ResourceDictionary>

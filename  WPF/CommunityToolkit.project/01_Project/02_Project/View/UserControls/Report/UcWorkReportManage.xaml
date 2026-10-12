@@ -1,0 +1,263 @@
+<UserControl x:Class="_02_Project.View.UserControls.Report.UcWorkReportManage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             mc:Ignorable="d"
+             d:DesignWidth="1000" d:DesignHeight="640"
+             Background="#F0F2F5">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </UserControl.Resources>
+
+    <hc:Interaction.Triggers>
+        <hc:EventTrigger EventName="Loaded">
+            <hc:EventToCommand Command="{Binding LoadCommand}" />
+        </hc:EventTrigger>
+    </hc:Interaction.Triggers>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- ===== 页面标题 ===== -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="2,0,0,10">
+            <TextBlock Text="报工管理" FontSize="20" FontWeight="SemiBold" Foreground="#303133" />
+            <TextBlock Text="（报工管理 - 报工单：工资 = 数量 × 单价，单价取自工价）" FontSize="12" Foreground="#909399"
+                       VerticalAlignment="Bottom" Margin="10,0,0,3" />
+        </StackPanel>
+
+        <!-- ===== 工具栏 ===== -->
+        <Border Grid.Row="1" Background="White" CornerRadius="6" Padding="12,10"
+                BorderBrush="#E4E7ED" BorderThickness="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="报工单ID：" FontSize="13" Foreground="#606266" VerticalAlignment="Center" />
+                    <TextBox Width="100" Height="32" VerticalContentAlignment="Center"
+                             Text="{Binding QueryId, UpdateSourceTrigger=PropertyChanged}"
+                             PreviewTextInput="QueryIdBox_PreviewTextInput" />
+                    <TextBlock Text="员工：" FontSize="13" Foreground="#606266" VerticalAlignment="Center" Margin="12,0,0,0" />
+                    <ComboBox Width="130" Height="32" VerticalContentAlignment="Center"
+                              ItemsSource="{Binding FilterEmployeeOptions}"
+                              DisplayMemberPath="Text" SelectedValuePath="Id"
+                              SelectedValue="{Binding FilterEmployeeId}" />
+                    <TextBlock Text="开始：" FontSize="13" Foreground="#606266" VerticalAlignment="Center" Margin="12,0,0,0" />
+                    <hc:DateTimePicker Width="150" Height="32" VerticalContentAlignment="Center"
+                                       SelectedDateTime="{Binding FilterStart}" />
+                    <TextBlock Text="结束：" FontSize="13" Foreground="#606266" VerticalAlignment="Center" Margin="8,0,0,0" />
+                    <hc:DateTimePicker Width="150" Height="32" VerticalContentAlignment="Center"
+                                       SelectedDateTime="{Binding FilterEnd}" />
+                    <Button Content="查询" Margin="8,0,0,0" Padding="16,6" Background="#409EFF"
+                            Foreground="White" BorderThickness="0" FontSize="13" Command="{Binding QueryCommand}" />
+                    <Button Content="重置" Margin="8,0,0,0" Padding="16,6" Background="#909399"
+                            Foreground="White" BorderThickness="0" FontSize="13" Command="{Binding ResetCommand}" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button Content="报工" Width="88" Height="32" Background="#409EFF"
+                            Foreground="White" BorderThickness="0" FontSize="13"
+                            Command="{Binding AddCommand}" IsEnabled="{Binding IsAdmin}" />
+                    <Button Content="导出Excel" Width="96" Height="32" Margin="8,0,0,0" Background="#409EFF"
+                            Foreground="White" BorderThickness="0" FontSize="13" Command="{Binding ExportCommand}" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- ===== 编辑表单（默认隐藏）：主表字段 + 子表单[员工姓名] ===== -->
+        <Border Grid.Row="2" Background="#FFF7E6" CornerRadius="6" Padding="12,10"
+                BorderBrush="#FAE3C4" BorderThickness="1" Margin="0,10,0,10"
+                Visibility="{Binding EditPanelVisible, Converter={StaticResource BoolToVis}}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="430" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- 左：主表字段 -->
+                <StackPanel Grid.Column="0" Margin="0,0,16,0">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                        <TextBlock Text="员工：" FontSize="13" Foreground="#606266" Width="80" VerticalAlignment="Center" />
+                        <ComboBox Width="150" Height="32" VerticalContentAlignment="Center"
+                                  ItemsSource="{Binding EmployeeOptions}"
+                                  DisplayMemberPath="Text" SelectedValuePath="Id"
+                                  SelectedValue="{Binding SelectedEmployeeId}" />
+                        <TextBlock Text="工组：" FontSize="13" Foreground="#606266" Width="44"
+                                   VerticalAlignment="Center" Margin="8,0,0,0" />
+                        <ComboBox Width="150" Height="32" VerticalContentAlignment="Center"
+                                  ItemsSource="{Binding GroupOptions}"
+                                  DisplayMemberPath="Text" SelectedValuePath="Id"
+                                  SelectedValue="{Binding SelectedGroupId}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                        <TextBlock Text="工序：" FontSize="13" Foreground="#606266" Width="80" VerticalAlignment="Center" />
+                        <ComboBox Width="150" Height="32" VerticalContentAlignment="Center"
+                                  ItemsSource="{Binding ProcessOptions}"
+                                  DisplayMemberPath="Text" SelectedValuePath="Id"
+                                  SelectedValue="{Binding SelectedProcessId}" />
+                        <TextBlock Text="工价：" FontSize="13" Foreground="#606266" Width="44"
+                                   VerticalAlignment="Center" Margin="8,0,0,0" />
+                        <ComboBox Width="150" Height="32" VerticalContentAlignment="Center"
+                                  ItemsSource="{Binding WageOptions}"
+                                  DisplayMemberPath="Text" SelectedValuePath="Id"
+                                  SelectedValue="{Binding SelectedWageId}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                        <TextBlock Text="报工数量：" FontSize="13" Foreground="#606266" Width="80" VerticalAlignment="Center" />
+                        <TextBox Width="70" Height="32" VerticalContentAlignment="Center"
+                                 Text="{Binding ReportCountText, UpdateSourceTrigger=PropertyChanged}"
+                                 PreviewTextInput="TxtCount_PreviewTextInput" />
+                        <TextBlock Text="单价：" FontSize="13" Foreground="#606266" Width="44"
+                                   VerticalAlignment="Center" Margin="8,0,0,0" />
+                        <TextBox Width="70" Height="32" VerticalContentAlignment="Center"
+                                 Text="{Binding UnitPriceText, Mode=OneWay}"
+                                 IsReadOnly="True" Background="#F5F7FA" />
+                        <TextBlock Text="工资：" FontSize="13" Foreground="#606266" Width="44"
+                                   VerticalAlignment="Center" Margin="8,0,0,0" />
+                        <TextBox Width="90" Height="32" VerticalContentAlignment="Center"
+                                 Text="{Binding WageText, Mode=OneWay}"
+                                 IsReadOnly="True" Background="#F5F7FA" />
+                        <TextBlock Text="员工个数：" FontSize="13" Foreground="#606266" Width="64"
+                                   VerticalAlignment="Center" Margin="8,0,0,0" />
+                        <TextBox Text="{Binding EmployeeCount, Mode=OneWay}" Width="60" Height="32"
+                                 VerticalContentAlignment="Center"
+                                 IsReadOnly="True" Background="#F5F7FA" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                        <TextBlock Text="报工时间：" FontSize="13" Foreground="#606266" Width="80" VerticalAlignment="Center" />
+                        <hc:DateTimePicker Width="160" Height="32" VerticalContentAlignment="Center"
+                                           SelectedDateTime="{Binding StartTime}" />
+                        <TextBlock Text="至" FontSize="13" Foreground="#606266" VerticalAlignment="Center" Margin="6,0" />
+                        <hc:DateTimePicker Width="160" Height="32" VerticalContentAlignment="Center"
+                                           SelectedDateTime="{Binding EndTime}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                        <TextBlock Text="备注：" FontSize="13" Foreground="#606266" Width="80" VerticalAlignment="Center" />
+                        <TextBox Width="300" Height="32" VerticalContentAlignment="Center"
+                                 Text="{Binding Remark, UpdateSourceTrigger=PropertyChanged}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
+                        <Button Content="保存" Width="80" Height="32" Background="#67C23A"
+                                Foreground="White" BorderThickness="0" FontSize="13" Command="{Binding SaveCommand}" />
+                        <Button Content="取消" Width="80" Height="32" Margin="8,0,0,0" Background="#909399"
+                                Foreground="White" BorderThickness="0" FontSize="13" Command="{Binding CancelCommand}" />
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- 右：子表单[员工姓名]（按工组过滤） -->
+                <Border Grid.Column="1" Background="White" CornerRadius="4" BorderBrush="#E4E7ED" BorderThickness="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <DockPanel Grid.Row="0" LastChildFill="False" Margin="8,6">
+                            <TextBlock Text="子表单[员工姓名]（勾选参与报工的员工，可多选）" FontSize="13"
+                                       FontWeight="SemiBold" Foreground="#303133" DockPanel.Dock="Left"
+                                       VerticalAlignment="Center" />
+                            <Button Content="全选" Width="56" Height="26" Margin="12,0,0,0" DockPanel.Dock="Right"
+                                    Background="#409EFF" Foreground="White" BorderThickness="0" FontSize="12"
+                                    Command="{Binding SelectAllCommand}" />
+                            <Button Content="清空" Width="56" Height="26" Margin="6,0,0,0" DockPanel.Dock="Right"
+                                    Background="#909399" Foreground="White" BorderThickness="0" FontSize="12"
+                                    Command="{Binding ClearAllCommand}" />
+                        </DockPanel>
+                        <ListBox Grid.Row="1" Margin="8,0,8,8"
+                                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                 ItemsSource="{Binding ReportEmployees}">
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="{x:Type ListBoxItem}">
+                                    <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <CheckBox Content="{Binding Text}"
+                                              IsChecked="{Binding IsSelected, RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}}" />
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- ===== 数据表格 + 分页 ===== -->
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <DataGrid Grid.Row="0"
+                      AutoGenerateColumns="False" IsReadOnly="True"
+                      SelectionMode="Single" HeadersVisibility="Column"
+                      BorderThickness="1" BorderBrush="#E4E7ED" Background="White"
+                      RowHeight="40" Margin="0,0,0,8"
+                      HorizontalScrollBarVisibility="Auto"
+                      ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="序号" Width="50" Binding="{Binding Index}" />
+                    <DataGridTextColumn Header="报工单ID" Width="85" Binding="{Binding Id}" />
+                    <DataGridTextColumn Header="员工" Width="110" Binding="{Binding EmployeeName}" />
+                    <DataGridTextColumn Header="工组" Width="100" Binding="{Binding WorkGroupName}" />
+                    <DataGridTextColumn Header="工序" Width="110" Binding="{Binding ProcessName}" />
+                    <DataGridTextColumn Header="工价" Width="110" Binding="{Binding WageSettingName}" />
+                    <DataGridTextColumn Header="数量" Width="70" Binding="{Binding ReportCount}" />
+                    <DataGridTextColumn Header="单价" Width="70" Binding="{Binding UnitPrice, StringFormat=0.##}" />
+                    <DataGridTextColumn Header="工资" Width="90" Binding="{Binding Wage, StringFormat=0.##}" />
+                    <DataGridTextColumn Header="员工个数" Width="80" Binding="{Binding EmployeeCount}" />
+                    <DataGridTextColumn Header="报工时间" Width="140"
+                                        Binding="{Binding StartTime, StringFormat=yyyy-MM-dd HH:mm}" />
+                    <DataGridTextColumn Header="子表单员工" Width="220" Binding="{Binding EmployeeNames}" />
+                    <DataGridTemplateColumn Header="操作" Width="150" CanUserResize="False">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Content="修改"
+                                            Command="{Binding DataContext.EditRowCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}"
+                                            IsEnabled="{Binding DataContext.IsAdmin, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                            Padding="10,4" FontSize="12" Background="#409EFF"
+                                            Foreground="White" BorderThickness="0" />
+                                    <Button Content="删除"
+                                            Command="{Binding DataContext.DeleteRowCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}"
+                                            IsEnabled="{Binding DataContext.IsAdmin, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                            Margin="8,0,0,0" Padding="10,4" FontSize="12" Background="#E74C3C"
+                                            Foreground="White" BorderThickness="0" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <!-- 分页 -->
+            <DockPanel Grid.Row="1" LastChildFill="False">
+                <TextBlock DockPanel.Dock="Left" Text="{Binding TotalText}" FontSize="12"
+                           Foreground="#909399" VerticalAlignment="Center" />
+                <hc:Pagination DockPanel.Dock="Right"
+                               MaxPageCount="{Binding MaxPageCount, Mode=OneWay}"
+                               PageIndex="{Binding PageIndex, Mode=TwoWay}"
+                               DataCountPerPage="10"
+                               IsJumpEnabled="True">
+                    <hc:Interaction.Triggers>
+                        <hc:EventTrigger EventName="PageUpdated">
+                            <hc:EventToCommand Command="{Binding PageUpdatedCommand}" PassEventArgsToCommand="True" />
+                        </hc:EventTrigger>
+                    </hc:Interaction.Triggers>
+                </hc:Pagination>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</UserControl>

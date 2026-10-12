@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="导航属性.pages.MainPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:导航属性.pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainPage1"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    
+    <Page.Resources>
+        <ResourceDictionary>
+            
+        </ResourceDictionary>    
+    </Page.Resources>
+    <Grid>
+        <StackPanel>
+            <TextBlock>主页面</TextBlock>
+            <!--  TextDecorations  文本装饰 用于设置:  Underline 下划线 Baseline 基线  Strikethrough 删除线 Overline  -->
+            <WrapPanel>
+                <TextBlock
+                    Foreground="#0000EE"
+                    MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"
+                    TextDecorations="Underline">
+                    Page1
+                </TextBlock>
+
+                <TextBlock Text="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;" />
+
+                <TextBlock
+                    Foreground="#0000EE"
+                    MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_1"
+                    TextDecorations="Underline">
+                    Page2
+                </TextBlock>
+                <TextBlock Text="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;" />
+                <TextBlock
+                    Foreground="#0000EE"
+                    Text="page3"
+                    TextDecorations="Underline" />
+                <TextBlock Text="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;" />
+                <TextBlock
+                    Foreground="#0000EE"
+                    MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_2"
+                    Text="taobao"
+                    TextDecorations="Underline" />
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using 反射_Core_01_主程序_SDK;
+
+namespace 反射_Core_03_类库
+{
+    internal class Dog : IAnimal
+    {
+        public void Voice(int index)
+        {
+         for (int i = 0; i < index; i++)
+         {
+             Console.WriteLine("汪汪汪");
+         }
+        }
+    }
+}

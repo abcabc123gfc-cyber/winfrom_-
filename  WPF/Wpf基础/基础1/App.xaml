@@ -1,0 +1,17 @@
+﻿<Application
+    x:Class="基础1.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:基础1"
+    StartupUri="MainWindow.xaml">
+    <!--  合并资源字典 把外部文件中定义的样式合并到当前应用程序的资源中   相当于是全局样式  -->
+    <Application.Resources>
+        <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--  加载方式1  -->
+                <ResourceDictionary Source="pack://application:,,,/基础1;component/Resource/Dictionary1.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

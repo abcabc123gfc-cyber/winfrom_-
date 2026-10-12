@@ -1,0 +1,20 @@
+﻿<Window
+    x:Class="Prism_Dialog.Views.Window2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Prism_Dialog.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    Title="Window2"
+    Width="800"
+    Height="450"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
+    <StackPanel>
+        <Button Command="{Binding ReciCommand}" Content="订阅消息" />
+        <Button Command="{Binding CancelCommand}" Content="取消订阅" />
+
+        <TextBlock Text="{Binding Msg}" />
+    </StackPanel>
+</Window>

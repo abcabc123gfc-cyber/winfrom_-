@@ -1,0 +1,26 @@
+﻿<Window
+    x:Class="Prism_Dialog.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:prism="http://prismlibrary.com/"
+    Title="{Binding Title}"
+    Width="525"
+    Height="350"
+    prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <StackPanel>
+            <Button
+                Width="100"
+                Height="30"
+                Command="{Binding OpenCommand}"
+                CommandParameter="Window1"
+                Content="win1" />
+            <Button
+                Width="100"
+                Height="30"
+                Command="{Binding OpenCommand}"
+                CommandParameter="Window2"
+                Content="win2" />
+        </StackPanel>
+    </Grid>
+</Window>

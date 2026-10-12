@@ -1,0 +1,15 @@
+﻿<Application
+    x:Class="基础2.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:基础2"
+    Startup="Application_Startup">
+    <Application.Resources />
+    <!--
+    1. StartupUri属性，如：StartupUri="MainWindow.xaml" 推荐使用
+    
+    2. Startup事件，如：Startup="Application_Startup" 推荐使用
+    
+    3. 自定义Main入口方法，不建议,如果使用自定义的Main方法,也有多种显示窗体的方式。
+-->
+</Application>

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37314.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prism_Dialog", "Prism_Dialog\Prism_Dialog.csproj", "{5659F6A4-109A-46A4-B61C-0E95CFC444E4}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CarSetup", "CarSetup\CarSetup.vdproj", "{87427A00-5FF7-A36D-FFB0-2AF36A9E8AFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5659F6A4-109A-46A4-B61C-0E95CFC444E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5659F6A4-109A-46A4-B61C-0E95CFC444E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5659F6A4-109A-46A4-B61C-0E95CFC444E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5659F6A4-109A-46A4-B61C-0E95CFC444E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87427A00-5FF7-A36D-FFB0-2AF36A9E8AFD}.Debug|Any CPU.ActiveCfg = Debug
+		{87427A00-5FF7-A36D-FFB0-2AF36A9E8AFD}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BE79830-0F30-4242-BB16-EF2A7C36F74C}
+	EndGlobalSection
+EndGlobal

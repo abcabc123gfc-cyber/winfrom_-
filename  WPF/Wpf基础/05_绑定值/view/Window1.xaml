@@ -1,0 +1,27 @@
+﻿<Window
+    x:Class="_05_绑定值.View.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:_05_绑定值.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:_05_绑定值.ViewModel"
+    Title="Window1"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+
+    <Window.DataContext>
+        <!--  注册数据源 ViewModel文件夹下  -->
+        <vm:Window1ViewModel />
+    </Window.DataContext>
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="{Binding id}" />
+            <TextBlock Text="{Binding Name}" />
+            <ListBox ItemsSource="{Binding ListData}" />
+            <Button Content="{Binding id}" />
+        </StackPanel>
+
+    </Grid>
+</Window>

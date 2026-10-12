@@ -1,0 +1,10 @@
+﻿<Application
+    x:Class="导航属性.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:导航属性"
+    xmlns:d="clr-namespace:导航属性.pages"
+    StartupUri="Mainwindow.xaml">
+    <Application.Resources />
+    <!--StartupUri="/pages/MainPage1.xaml"-->
+</Application>

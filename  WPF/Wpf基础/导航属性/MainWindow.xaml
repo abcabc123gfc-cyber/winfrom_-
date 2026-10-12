@@ -1,0 +1,24 @@
+﻿<NavigationWindow
+    x:Class="导航属性.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:导航属性"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    ShowsNavigationUI="False"
+    mc:Ignorable="d">
+    <!--  导航窗体 不能添加控件只能当做容器去显示  -->
+
+    <!--
+        ShowsNavigationUI="False" 隐藏导航窗体中的前进后退的按钮
+        在 NavigationWindow 添加
+    -->
+    <!--<WindowChrome UseAeroCaptionButtons="True" /> 隐藏标题栏-->
+    <WindowChrome.WindowChrome>
+        <WindowChrome UseAeroCaptionButtons="True" />
+
+    </WindowChrome.WindowChrome>
+</NavigationWindow>

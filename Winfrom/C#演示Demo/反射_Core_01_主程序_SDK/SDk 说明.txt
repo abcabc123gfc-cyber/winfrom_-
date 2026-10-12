@@ -1,0 +1,143 @@
+﻿
+需要 : 接口 + 元数据标记(Arrtibute)  特性标注 如:未完成的类可以加自定义特性来跳过Arrtibute
+需要说明书：
+1. 插件必须实现接口
+2. 插件必须引用 SDK
+3. 主程序必须引用 SDK
+4. SDK 的其他常见职责（作为“契约层”的延伸）
+
+这个 SDK 项目（反射_Core_01_主程序_SDK）是主程序和插件之间的“契约层”。
+它本身不干活，只定义双方必须共同遵守的类型：接口、特性、（通常还有）枚举、DTO、抽象基类等。主程序和所有插件都引用它，
+从而在不互相引用的情况下实现“主程序用反射加载插件、按接口调用插件”的架构
+
+主程序：不引用任何插件项目，运行时用 AssemblyLoadContext / Assembly.LoadFrom 把插件 DLL 加载进来，再通过 typeof(IAnimal) 找类型、Activator.CreateInstance 创建实例、调 Voice()。
+
+插件：不引用主程序，只引用 SDK，写一个 class Dog : IAnimal，编译成独立 DLL 丢到插件目录。
+
+SDK：唯一的公共依赖。
+
+二、两个文件各自的作用
+1. IAnimal.cs —— 契约接口
+csharp
+internal interface IAnimal
+{
+    void Voice(int times);
+}
+这是插件必须实现的协议。它的作用是：
+
+主程序知道“凡是实现了 IAnimal 的类型，我都可以把它当动物用，调用 Voice”；
+
+插件开发者知道“我要写一个能被主程序识别的类，就得实现 IAnimal”；
+
+主程序扫描插件程序集时，通常就是：
+
+csharp
+foreach (var type in assembly.GetTypes())
+{
+    if (typeof(IAnimal).IsAssignableFrom(type) && !type.IsAbstract)
+    {
+        var animal = (IAnimal)Activator.CreateInstance(type)!;
+        animal.Voice(3);
+    }
+}
+⚠️ 这里有个实际问题：IAnimal 声明成了 internal。
+
+internal 意味着它只在 反射_Core_01_主程序_SDK 这个程序集内可见。如果插件是另一个独立程序集，它根本编译不过——插件项目无法实现一个看不到的接口。
+
+要么改成 public：
+
+csharp
+public interface IAnimal
+{
+    void Voice(int times);
+}
+要么在 SDK 里加 InternalsVisibleTo 把插件程序集暴露出来（一般只在插件数量固定、程序集名确定时才这么干）：
+
+csharp
+[assembly: InternalsVisibleTo("反射_Core_01_插件_Dog")]
+通常插件 SDK 的接口都应该是 public 的。
+
+2. UnfinishedAttribute.cs —— 元数据标记
+csharp
+public class UnfinishedAttribute : Attribute
+{
+}
+这是一个空特性，作用是给类型/成员打标签，让主程序在反射阶段读取并据此做决策。比如：
+
+csharp
+[Unfinished]
+public class Fish : IAnimal
+{
+    public void Voice(int times) => throw new NotImplementedException();
+}
+主程序扫描时可以跳过它：
+
+csharp
+var attr = type.GetCustomAttribute<UnfinishedAttribute>();
+if (attr != null)
+{
+    Console.WriteLine($"{type.Name} 未完成，跳过");
+    continue;
+}
+建议增强的两点：
+
+加 AttributeUsage，限定它能标在哪些目标上：
+
+csharp
+[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
+public class UnfinishedAttribute : Attribute
+{
+}
+加参数携带信息（原因、预计版本、负责人等），对诊断更有用：
+
+csharp
+[AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
+public class UnfinishedAttribute : Attribute
+{
+    public string? Reason { get; }
+    public UnfinishedAttribute(string? reason = null) => Reason = reason;
+}
+三、为什么主程序和插件必须引用“同一份”SDK DLL（最容易踩的坑）
+CLR 判断两个类型是否相同，看的是程序集标识 + 类型全名，而不是接口签名长得一样。也就是说：
+
+主程序引用的 反射_Core_01_主程序_SDK.dll
+
+插件引用并编译进去的 反射_Core_01_主程序_SDK.dll
+
+如果它们不是同一个文件 / 同一标识（简单名 + 版本 + 公钥令牌），那么即使都叫 IAnimal，在运行时也是两个不同的类型。typeof(IAnimal).IsAssignableFrom(pluginType) 会返回 false，插件“实现了接口却不被识别”。
+
+实操要点：
+
+插件不要自己打包一份 SDK DLL 到自己的输出目录（或至少确保加载时不会解析到第二份）。插件项目引用 SDK 时，建议把 SDK 的 Copy Local 关掉，由主程序目录统一提供 反射_Core_01_主程序_SDK.dll。
+
+SDK 的 DLL 放在主程序 bin/Debug/net8.0/ 下，这样默认 AssemblyLoadContext 能解析到它（跟前面聊的 bin/obj 呼应：只有 bin 里才有完整可用的依赖布局）。
+
+如果用自定义 AssemblyLoadContext 加载插件，要在 Load 里对 SDK 程序集做统一返回（例如直接返回已加载的 SDK 实例），避免插件上下文再加载一份：
+
+csharp
+protected override Assembly? Load(AssemblyName name)
+{
+    // SDK 程序集统一交给默认上下文
+    if (name.Name == "反射_Core_01_主程序_SDK")
+        return null; // 回退到 Default
+    // 其他按 AssemblyDependencyResolver 解析
+    ...
+}
+四、SDK 的其他常见职责（作为“契约层”的延伸）
+除了你这两个文件，典型的插件 SDK 还会放：
+
+抽象基类：比接口更方便提供默认实现；
+
+枚举 / 常量：比如插件能力标识；
+
+特性：你已经有 UnfinishedAttribute，还可以有 PluginInfoAttribute（名称、版本、作者）、DependsOnAttribute 等；
+
+DTO / 序列化模型：主程序和插件交换数据用；
+
+共享工具方法（谨慎，避免 SDK 变成“大杂烩”）；
+
+异常类型：插件抛出的、主程序能识别的异常。
+
+五、一句话总结
+SDK 的目的：把“主程序认识插件”所依赖的类型定义抽出来，形成一个双方共同引用的契约程序集；作用：让主程序和插件编译期互不引用、运行时靠反射 + 接口对齐，实现可插拔。
+而 IAnimal 是契约本身，UnfinishedAttribute 是契约之上的元数据标记；二者都要注意可见性（接口应 public）和程序集唯一性（双方必须解析到同一份 SDK DLL）。

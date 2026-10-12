@@ -1,0 +1,57 @@
+﻿<Window
+    x:Class="练习.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:练习"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="buttonSytle" TargetType="Control">
+                <Setter Property="Height" Value="30" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel
+            Grid.Column="0"
+            Width="150"
+            HorizontalAlignment="Left">
+            <Label Content="博客系统" Style="{StaticResource buttonSytle}" />
+            <Button
+                Click="Button_Click"
+                Content="用户管理"
+                FontSize="17"
+                Style="{StaticResource buttonSytle}" />
+            <Button
+                Click="Button_Click"
+                Content="博客管理"
+                FontSize="17"
+                Style="{StaticResource buttonSytle}" />
+        </StackPanel>
+        <StackPanel
+            Grid.Column="1"
+            Height="50"
+            VerticalAlignment="Top"
+            Background="Black" />
+        <WrapPanel
+            Grid.Column="1"
+            Height="400"
+            VerticalAlignment="Bottom">
+            <Button Background="Red" />
+        </WrapPanel>
+    </Grid>
+</Window>

@@ -9,6 +9,7 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
+    <!--  控件嵌套 与容器控件  -->
     <!--  局部样式  -->
     <Window.Resources>
         <ResourceDictionary>
@@ -35,19 +36,19 @@
                 Source="/Image/bd.png" />
         </StackPanel>
         <Button
-     Width="400"
-     Height="200"
-     Content="按钮112"
-     Style="{StaticResource ResourceKey=buttonDefultAll}" />
+            Width="400"
+            Height="200"
+            Content="按钮112"
+            Style="{StaticResource ResourceKey=buttonDefultAll}" />
         <ComboBox Width="100" Height="100">
             <ComboBoxItem>1</ComboBoxItem>
             <ComboBoxItem>2</ComboBoxItem>
 
         </ComboBox>
         <!--
-     错误: 一个控件的Content内容属性 只能设置一次  也就说 一个控件只能有一个子控件
-     如果需要多个子控件 就可以使用布局控件来实现
- -->
+            错误: 一个控件的Content内容属性 只能设置一次  也就说 一个控件只能有一个子控件
+            如果需要多个子控件 就可以使用布局控件来实现
+        -->
         <Label>
             <StackPanel>
                 <Button>123</Button>

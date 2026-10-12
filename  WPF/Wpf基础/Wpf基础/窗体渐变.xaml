@@ -1,0 +1,62 @@
+﻿<Window
+    x:Class="Wpf基础.Window3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Wpf基础"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Window3"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <!--  线性渐变 窗体边框  -->
+    <Window.BorderBrush>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Offset="0" Color="Red" />
+            <GradientStop Offset="0.5" Color="Yellow" />
+            <GradientStop Offset="1" Color="Green" />
+        </LinearGradientBrush>
+    </Window.BorderBrush>
+    <!--窗体渐变 背景-->
+    <!--<Window.Background>
+    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Offset="0" Color="Red" />
+        <GradientStop Offset="0.5" Color="Yellow" />
+        <GradientStop Offset="1" Color="Green" />
+    </LinearGradientBrush>
+</Window.Background>-->
+    <!--  径向渐变 窗体背景  -->
+    <!--<Window.Background>
+        <RadialGradientBrush>
+            <RadialGradientBrush.GradientStops>
+                <GradientStop Offset="0" Color="Red" />
+                <GradientStop Offset="0.5" Color="Yellow" />
+                <GradientStop Offset="1" Color="Green" />
+            </RadialGradientBrush.GradientStops>
+        </RadialGradientBrush>
+   </Window.Background>-->
+  <Grid>
+     <!--<Button>
+         <Button.Content>
+             按钮1
+         </Button.Content>
+     </Button>-->
+     <Label Name="label1" VerticalAlignment="Top">1232</Label>
+     <Label x:Name="aaa">1232</Label>
+     <Button
+         Width="100"
+         Height="100"
+         >
+         <Button.Content>
+             打开新窗体
+         </Button.Content>
+         <Button.Background>
+             <SolidColorBrush Color="Blue" />
+         </Button.Background>
+         <Button.Foreground>
+             <SolidColorBrush Color="red" />
+         </Button.Foreground>
+
+     </Button>
+    </Grid>
+</Window>

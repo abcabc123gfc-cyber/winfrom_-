@@ -1,0 +1,70 @@
+﻿<Window
+    x:Class="WPF项目.Views.Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:local="clr-namespace:WPF项目.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:WPF项目.ViewModels"
+    Title="Main"
+    Width="800"
+    Height="450"
+    Closing="Window_Closing"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!--：HandyControl 提供的交互触发器集合，用来在不写后台代码（Code-Behind）的情况下，监听控件事件并执行相应动作。
+                <hc:EventTrigger EventName="SelectionChanged">：指定要监听的事件名称。这里监听的是 SideMenu 的 SelectionChanged 事件（即用户选中了另一个菜单项时触发）。
+                    <hc:EventToCommand ... /> ：核心组件，负责把事件转换成命令来执行。
+Command="{Binding SwitchItemCmd}"：绑定到 ViewModel 中名为 SwitchItemCmd 的 ICommand 属性。当事件触发时，这个命令的 Execute 方法就会被调用。
+PassEventArgsToCommand="True"：关键的一行。它表示把 SelectionChanged 事件的参数（SelectionChangedEventArgs）作为 CommandParameter 传给命令的 Execute 方法。这样，ViewModel 就能知道具体是哪个菜单项被选中了，而无需引用任何 UI 控件。-->
+        <hc:SideMenu Grid.Column="0" BorderThickness="1">
+            <hc:Interaction.Triggers>
+                <hc:EventTrigger EventName="SelectionChanged">
+                    <!--<hc:EventToCommand Command="{Binding SwitchItemCmd}" PassEventArgsToCommand="True" />-->
+                </hc:EventTrigger>
+            </hc:Interaction.Triggers>
+            <!--  父菜单  -->
+            <hc:SideMenuItem Header="用户管理">
+                <!--  子菜单  -->
+                <hc:SideMenuItem
+                    Command="{Binding SelectCmd}"
+                    CommandParameter="{Binding Header, RelativeSource={RelativeSource Self}}"
+                    Header="打开用户窗体" />
+                <hc:SideMenuItem
+                    Command="{Binding SelectCmd}"
+                    CommandParameter="{Binding Header, RelativeSource={RelativeSource Self}}"
+                    Header="关闭用户窗体" />
+            </hc:SideMenuItem>
+            <hc:SideMenuItem Header="仓库管理">
+                <hc:SideMenuItem
+                    Command="{Binding Store}"
+                    CommandParameter="{Binding Header, RelativeSource={RelativeSource Self}}"
+                    Header="打开仓库" />
+                <hc:SideMenuItem
+                    Command="{Binding Store}"
+                    CommandParameter="{Binding Header, RelativeSource={RelativeSource Self}}"
+                    Header="关闭仓库" />
+            </hc:SideMenuItem>
+            <hc:SideMenuItem Header="分区管理">
+                <hc:SideMenuItem
+                    Command="{Binding StoreArea}"
+                    CommandParameter="{Binding Header, RelativeSource={RelativeSource Self}}"
+                    Header="打开分区管理" />
+                <hc:SideMenuItem
+                    Command="{Binding StoreArea}"
+                    CommandParameter="{Binding Header, RelativeSource={RelativeSource Self}}"
+                    Header="关闭分区管理" />
+            </hc:SideMenuItem>
+
+        </hc:SideMenu>
+        <ContentControl Grid.Column="1" Content="{Binding CurrentView}" />
+    </Grid>
+</Window>

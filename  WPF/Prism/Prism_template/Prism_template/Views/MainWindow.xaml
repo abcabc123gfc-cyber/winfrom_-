@@ -1,0 +1,55 @@
+﻿<Window
+    x:Class="Prism_template.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:prism="http://prismlibrary.com/"
+    Title="{Binding Title}"
+    Width="525"
+    Height="350"
+    prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <!--<ContentControl prism:RegionManager.RegionName="ContentRegion" />-->
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Border
+         Grid.Row="0"
+         BorderBrush="red"
+         BorderThickness="2">
+            <ContentControl prism:RegionManager.RegionName="HeaderRegion" />
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+
+            <Border
+             Grid.Column="0"
+             BorderBrush="Yellow"
+             BorderThickness="2">
+                <ContentControl prism:RegionManager.RegionName="LeftRegion" />
+            </Border>
+            <Border
+             Grid.Column="1"
+             BorderBrush="Blue"
+             BorderThickness="2">
+                <Frame prism:RegionManager.RegionName="ContentRegion" />
+            </Border>
+        </Grid>
+
+
+        <!--
+         Region 区域管理: 充当一个容器 用来放置其他的页面
+         注意:如果需要放置的是Page 容器必须使用Frame
+         如果需要放置的是UserControl  容器可以是Frame ContentControl
+     -->
+
+
+    </Grid>
+</Window>
